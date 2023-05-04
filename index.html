@@ -1,0 +1,40 @@
+<html>  
+<head>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link/>
+</head>  
+<body style="text-align: center; margin-top: 250px;">  
+<h2 style="color: 1419AC; font-family: 'Times New Roman', Times, serif; font-weight: bolder;" > Calculate Age from Date of Birth <br> <br> </h2>   
+  
+<b> Enter Date of Birth: <input type=date id = DOB> </b>  
+<span id = "message" style="color:red"> </span> <br><br>    
+  
+
+<button style="background-color: 1419AC;" type="submit button"  class="btn btn-primary" onclick = "ageCalculator()"> Calculate age </button> <br><br>  
+<h3 style="color:32A80F" id="result" ></h3>   
+<script>  
+    function ageCalculator() {  
+        var userinput = document.getElementById("DOB").value;  
+        var dob = new Date(userinput);  
+        if(userinput==null || userinput=='') {  
+          document.getElementById("message").innerHTML = "*Choose a date please!";    
+          return false;   
+        } else {  
+    
+        var month_diff = Date.now() - dob.getTime();  
+      
+        var age_dt = new Date(month_diff);   
+       
+        var year = age_dt.getUTCFullYear();  
+    
+        var age = Math.abs(year - 1970);  
+    
+        return document.getElementById("result").innerHTML =    
+                 "Age is: " + age + " years. ";  
+        }  
+    }  
+    </script>  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>  
+</html>  
